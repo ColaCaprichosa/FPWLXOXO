@@ -1,0 +1,156 @@
+<div class="header">
+		<div style="display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(min-content, 1fr));
+			grid-auto-flow: column;
+			gap: 5px;
+			width: fit-content;
+			margin: 5px;
+			margin-top: 15px;
+			margin-bottom: 20px;
+			box-shadow: 0 0px #ffffff, 0 0 13px rgba(255, 255, 255, 0.192);
+			border-radius: 5px;
+			place-items: center;
+			color: var(--c-text);
+			background-color: var(--c-controls);">
+			<li class="header-title" id="title_id" style="font-weight: bold;padding-left:10px;">ZINC</li>
+			<div class="ball">
+			</div>
+			<li class="header-title" id="product_id">zinc</li>
+			<div class="ball">
+			</div>
+			<li class="header-title" style="font-weight: bold;width: max-content;" id="user_days">
+				days left: &#9676;
+			</li>
+			<div class="ball">
+			</div>
+			<select id="theme_select" class="select-dropdown" onchange="c_theme();"
+				style="margin:10px;width: 100px;min-width: auto;">
+				<option value="0">dark</option>
+				<option value="1">white</option>
+				<option value="2">purple</option>
+				<option value="3">marine</option>
+				<option value="4">pink</option>
+				<option value="5">gold</option>
+				<option value="6">red</option>
+			</select>
+		</div>
+	</div>
+
+	<div id="notification-container"></div>
+
+	<div class="content" style="display: flex;
+    place-items: flex-start;
+    justify-content: center;">
+
+		<div class="panel_style" id="left_panel" style="transition: all 0.5s ease;margin-right: 15px;">
+			<div class="tabs" id="element_left_buttons"></div>
+			<div class="panel_right_style" id="panel_chat" style="display:flex;">
+			</div>
+		</div>
+
+		<div style="display:none;" id="m_t_left_panel">
+			<button class="newbutton" data-ttip="left panel" onclick="togglePanel(this, 'left_panel');"><i
+					class="fa fa-home" aria-hidden="true"></i>
+			</button>
+		</div>
+
+		<div class="panel_style" id="center_panel">
+			<div style="width: 415px;">
+				<h2 id="waiting_game" style="text-align: center;padding-top:15px;">loading</h2>
+				<div class="tabs" id="element_buttons" style="display:none"></div>
+			</div>
+
+			<div class="elementz" id="element_main" style="display: none;">
+				<p></p>
+				<div class="buttons" id="main_elements">
+					<div style="display: flex; justify-content: flex-start; margin-right: 15px;">
+						<div style="margin-right: auto;">
+							<button class="newbutton" data-ttip="left panel"
+								onclick="togglePanel(this, 'left_panel');"><i class="fa fa-commenting"
+									aria-hidden="true"></i></button>
+						</div>
+						<div style="margin-left: auto;">
+							<button class="newbutton" data-ttip="right panel" onclick="togglePanel(this);"><i
+									class="fa fa-ellipsis-h" aria-hidden="true"></i>
+							</button>
+						</div>
+					</div>
+					<hr style="border-top: 1px solid var(--c-hr);width:200px;">
+				</div>
+			</div>
+
+			<div class="elementz" id="element_keys" style="width: 415px;display: none;">
+				<p></p>
+				<div class="buttons" id="keys_elements">
+				</div>
+			</div>
+
+			<div class="elementz" id="element_overlay" style="width: 415px;display: none;">
+				<p></p>
+				<div class="buttons" id="overlay_elements">
+				</div>
+			</div>
+
+			<div class="elementz" id="element_setting" style="width: 415px;display: none;">
+				<p></p>
+				<div class="buttons" id="setting_elements">
+				</div>
+			</div>
+
+			<div class="elementz" id="element_qrcode" style="width: 100%;display: none;">
+				<div class="buttons">
+					<div id="qrimageshit" style="margin-left: -20px;display: grid;
+					place-items: center;">
+						<h2 class="content-logo" id="qrcode_text"
+							style="padding-top:0px;margin-left:0px;text-align:center;"></h2>
+						<img id="qrimage"
+							src="https://chart.googleapis.com/chart?cht=qr&chl=https://google.com&chs=240x240&chld=L|0"
+							class="qr-code img-thumbnail img-responsive" />
+					</div>
+				</div>
+			</div>
+
+			<div style="margin-top:20px;display: none;" id="element_config">
+				<hr style="border-top: 1px solid var(--c-hr);">
+				<h2 class="content-logo" style="margin-top:-30px">&#9679; config</h2>
+				<div class="buttons">
+					<button class="newbutton" style="width: 190px;" id="save_cfg"
+						onclick="set_button(this.id)">save</button>
+					<button class="newbutton" style="width: 190px;" id="load_cfg"
+						onclick="set_button(this.id)">load</button>
+					<br>
+					<button class="newbutton" style="margin-left: -2px;width: 190px;" id="export_cfg"
+						onclick="set_button(this.id)"
+						data-tooltip="Exporta una config al CLIPBOARD para compartirla">export</button>
+					<button class="newbutton" style="width: 190px;" id="import_cfg" onclick="set_button(this.id)"
+						data-tooltip="Importa una config desde CLIPBOARD">import</button>
+
+					<hr style="margin-left:-20px;border-top: 1px solid var(--c-hr);">
+
+					<button class="newbutton" style="width: 380px;" id="safe_exit" onclick="call_exit()">
+						<span style="font-weight: bold;cursor:pointer;">EXIT</span></button>
+					<br>
+				</div>
+			</div>
+			<br>
+		</div>
+
+		<div style="display:none;" id="m_t_right_panel">
+			<button class="newbutton" data-ttip="right panel" onclick="togglePanel(this);"><i class="fa fa-home"
+					aria-hidden="true"></i>
+			</button>
+		</div>
+
+		<div class="panel_style" id="right_panel" style="transition: all 0.5s ease;margin-left: 15px;">
+			<div class="tabs" id="element_right_buttons"></div>
+			<div class="panel_right_style" id="panel_updates" style="display:flex;">
+				<p style="text-align: center;margin-top: 0px;" id="last_update">loading</p>
+				<p style="text-align: center;margin-top: 0px;" id="changelogs"></p>
+			</div>
+			<div class="panel_right_style" id="panel_tickets" style="display:none;"></div>
+			<div class="panel_right_style" id="panel_profiles" style="display:none;"></div>
+		</div>
+
+		<audio src="https://cdn.jsdelivr.net/gh/ColaCaprichosa/FPWLR/bubble.wav" id="snd1" allow="autoplay"></audio>
+
+	</div>
