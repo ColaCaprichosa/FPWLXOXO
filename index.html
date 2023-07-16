@@ -12,15 +12,13 @@
 			place-items: center;
 			color: var(--c-text);
 			background-color: var(--c-controls);">
-			<li class="header-title" id="title_id" style="font-weight: bold;padding-left:10px;">ZINC</li>
+			<li class="header-title" id="title_id" style="font-weight: bold;padding-left:10px;">none</li>
 			<div class="ball">
 			</div>
-			<li class="header-title" id="product_id">zinc</li>
+			<li class="header-title" id="product_id">none</li>
 			<div class="ball">
 			</div>
-			<li class="header-title" style="font-weight: bold;width: max-content;" id="user_days">
-				days left: &#9676;
-			</li>
+			<li class="header-title" style="font-weight: bold;width: max-content;" id="user_days">&#9676;</li>
 			<div class="ball">
 			</div>
 			<select id="theme_select" class="select-dropdown" onchange="c_theme();"
@@ -49,7 +47,7 @@
 		</div>
 
 		<div style="display:none;" id="m_t_left_panel">
-			<button class="newbutton" data-ttip="left panel" onclick="togglePanel(this, 'left_panel');"><i
+			<button class="newbutton" data-ttip="chat panel" onclick="t_panel(this, 'left_panel');"><i
 					class="fa fa-home" aria-hidden="true"></i>
 			</button>
 		</div>
@@ -65,12 +63,12 @@
 				<div class="buttons" id="main_elements">
 					<div style="display: flex; justify-content: flex-start; margin-right: 15px;">
 						<div style="margin-right: auto;">
-							<button class="newbutton" data-ttip="left panel"
-								onclick="togglePanel(this, 'left_panel');"><i class="fa fa-commenting"
+							<button class="newbutton" data-ttip="chat panel"
+								onclick="t_panel(this, 'left_panel');"><i class="fa fa-commenting"
 									aria-hidden="true"></i></button>
 						</div>
 						<div style="margin-left: auto;">
-							<button class="newbutton" data-ttip="right panel" onclick="togglePanel(this);"><i
+							<button class="newbutton" data-ttip="profile panel" onclick="t_panel(this);"><i
 									class="fa fa-ellipsis-h" aria-hidden="true"></i>
 							</button>
 						</div>
@@ -114,20 +112,21 @@
 				<hr style="border-top: 1px solid var(--c-hr);">
 				<h2 class="content-logo" style="margin-top:-30px">&#9679; config</h2>
 				<div class="buttons">
-					<button class="newbutton" style="width: 190px;" id="save_cfg"
-						onclick="set_button(this.id)">save</button>
-					<button class="newbutton" style="width: 190px;" id="load_cfg"
-						onclick="set_button(this.id)">load</button>
+					<button class="newbutton" style="width: 190px;" id="save_c"
+						onclick="s_btn(this.id)">save</button>
+					<button class="newbutton" style="width: 190px;" id="load_c"
+						onclick="s_btn(this.id)">load</button>
 					<br>
-					<button class="newbutton" style="margin-left: -2px;width: 190px;" id="export_cfg"
-						onclick="set_button(this.id)"
+					<button class="newbutton" style="margin-left: -2px;width: 190px;" id="export_c"
+						onclick="s_btn(this.id)"
 						data-tooltip="Exporta una config al CLIPBOARD para compartirla">export</button>
-					<button class="newbutton" style="width: 190px;" id="import_cfg" onclick="set_button(this.id)"
+						
+					<button class="newbutton" style="width: 190px;" id="import_c" onclick="s_btn(this.id)"
 						data-tooltip="Importa una config desde CLIPBOARD">import</button>
 
 					<hr style="margin-left:-20px;border-top: 1px solid var(--c-hr);">
 
-					<button class="newbutton" style="width: 380px;" id="safe_exit" onclick="call_exit()">
+					<button class="newbutton" style="width: 380px;" id="safe_exit" onclick="c_exit()">
 						<span style="font-weight: bold;cursor:pointer;">EXIT</span></button>
 					<br>
 				</div>
@@ -136,7 +135,7 @@
 		</div>
 
 		<div style="display:none;" id="m_t_right_panel">
-			<button class="newbutton" data-ttip="right panel" onclick="togglePanel(this);"><i class="fa fa-home"
+			<button class="newbutton" data-ttip="profile panel" onclick="t_panel(this);"><i class="fa fa-home"
 					aria-hidden="true"></i>
 			</button>
 		</div>
