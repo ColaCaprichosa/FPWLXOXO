@@ -32,7 +32,7 @@
 			--c-text: #e2dede;
 			--c-text-title: #e2dede;
 			--c-contornos: #ffffff42;
-			--c-hr: #ffffff;
+			--c-hr: #ffffff83;
 		}
 
 		[data-theme="1"] {
@@ -807,18 +807,19 @@
 
 		dialog {
 			z-index: 992;
-			background-color: rgba(0, 0, 0, 0.8);
+			background-color: rgb(18 18 20);
 			border-style: solid;
-			border-bottom: 1px groove white;
+			border: 1px solid rgba(255, 255, 255, 0.171);
+			border-bottom: 2px groove white;
 			border-radius: 5px;
 		}
 
 		dialog::-webkit-backdrop {
-			background-color: rgba(3, 3, 3, 0.418);
+			background-color: rgb(26 34 43 / 42%);
 		}
 
 		dialog::backdrop {
-			background-color: rgba(3, 3, 3, 0.418);
+			background-color: rgb(26 34 43 / 42%);
 		}
 
 		dialog p {
@@ -924,3 +925,23 @@
 			border-radius: 50%;
 			background-color: var(--c-primary);
 		}
+
+		table {
+			width: 95%;
+			border-collapse: collapse;
+		  }
+	  
+		  th,
+		  td {
+			border: 1px solid #dddddd63;
+			padding: 8px;
+			text-align: left;
+		  }
+	  
+		  tr:nth-child(even) {
+			background-color: #77777759;
+		  }
+	  
+		  tr:hover {
+			background-color: rgba(18, 18, 29, 0.055);
+		  }
