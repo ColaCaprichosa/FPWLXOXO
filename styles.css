@@ -163,8 +163,8 @@
 			background: var(--c-controls);
 			border: 1px solid var(--c-contornos);
 			border-radius: var(--f-border-radius);
-			margin-top: 10px;
-			margin-bottom: 10px;
+			margin-top: 5px;
+			margin-bottom: 5px;
 			padding: 5px;
 			-webkit-transition: all 0.1s ease-out;
 			-o-transition: all 0.1s ease-out;
@@ -199,7 +199,8 @@
 			background: var(--c-controls);
 			border: 1px solid var(--c-contornos);
 			border-radius: var(--f-border-radius);
-			margin: 25px 0;
+			margin-top: 12px;
+			margin-bottom: 12px;
 			padding: 5px;
 		}
 
@@ -234,7 +235,8 @@
 			background: var(--c-controls);
 			border: 1px solid var(--c-contornos);
 			border-radius: var(--f-border-radius);
-			margin: 25px 0;
+			margin-top: 12px;
+			margin-bottom: 12px;
 			padding: 5px;
 		}
 
@@ -610,6 +612,7 @@
 			border: 1px solid var(--c-contornos);
 			min-width: 208px;
 			max-width: 208px;
+			margin-bottom: 10px;
 			height: 40px;
 		}
 
@@ -769,7 +772,7 @@
 
 		.tooltip {
 			position: absolute;
-			z-index: 9999;
+			z-index: 99999;
 			padding: 8px;
 			font-size: 14px;
 			color: var(--c-text);
@@ -783,12 +786,14 @@
 		}
 
 		.tooltip--visible {
+			z-index: 99999;
 			opacity: 1;
 			pointer-events: auto;
 			border-bottom: 1px groove var(--c-contornos);
 		}
 
 		.tooltip--visible:after {
+			z-index: 99999;
 			content: "zinc";
 			color: transparent;
 			display: block;
