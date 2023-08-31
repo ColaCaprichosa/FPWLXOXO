@@ -149,7 +149,7 @@
 
 		.elemitems_bg {
 			position: relative;
-			width: 50%;
+			width: 208px;
 			height: calc(var(--f-height) - 10px);
 			display: -webkit-box;
 			display: -ms-flexbox;
@@ -185,7 +185,7 @@
 
 		.r_slider_bg {
 			position: relative;
-			width: 50%;
+			width: 208px;
 			height: calc(var(--f-height) - 10px);
 			display: -webkit-box;
 			display: -ms-flexbox;
@@ -221,7 +221,7 @@
 
 		.f_slider_bg {
 			position: relative;
-			width: 50%;
+			width: 208px;
 			height: calc(var(--f-height) - 10px);
 			display: -webkit-box;
 			display: -ms-flexbox;
@@ -610,8 +610,8 @@
 			color: var(--c-text);
 			background-color: var(--c-controls);
 			border: 1px solid var(--c-contornos);
-			min-width: 208px;
-			max-width: 208px;
+			min-width: 220px;
+			max-width: 220px;
 			margin-bottom: 10px;
 			height: 40px;
 		}
@@ -620,8 +620,6 @@
 			position: relative;
 			background-color: var(--c-controls);
 			border-radius: 5px;
-			min-width: 208px;
-			max-width: 208px;
 			height: 40px;
 		}
 
